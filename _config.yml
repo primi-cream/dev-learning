@@ -1,13 +1,15 @@
 # Configurations
-title:            "dev-learning"
-author:           "Primi Cream"
+title:            dev-learning
+longtitle:        Primi Cream
+author:           Choi
+email:            drclockd@gmail.com
 description: >
-  "개발 학습 기록"
+  개발 학습 기록
 
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://side.or.kr'
+url:              'https://localhost:4000'
 baseurl:          '/dev-learning'
 rss:              RSS
 
@@ -67,10 +69,7 @@ incremental:      false
 regenerate:       true
 
 plugins:
-  - jekyll-remote-theme
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-sitemap  
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
+  
