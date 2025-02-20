@@ -184,18 +184,11 @@
 <div class="book-toc">
   <div class="book-toc-content">
     <ul class="sidebar-navigation">
-      {% assign categories = "" | split: "," %}
-
-      {% for post in site.posts %}
-        {% assign category = post.categories | first %}
-        {% unless categories contains category %}
-          {% assign categories = categories | push: category %}
-        {% endunless %}
-      {% endfor %}
+      {% assign categories = site.posts | map: "categories" | uniq %}
 
       {% for category in categories %}
         <li>
-          <a href="javascript:void(0)" class="category-toggle">{{ category }}</a>
+          <a href="javascript:void(0)" class="category-toggle"><strong>{{ category }}</strong></a>
           <ul class="category-posts">
             {% for post in site.posts %}
               {% if post.categories contains category %}
@@ -226,3 +219,4 @@
   });
 </script>
 {% endif %}
+
