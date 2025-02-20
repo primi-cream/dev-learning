@@ -1,6 +1,18 @@
-- title: 📂 카테고리
+- title: Java
   children:
-    - title: Java
-      url: /categories/Java/
-    - title: 자료구조
-      url: /categories/자료구조/
+    - title: Java 기초
+      url: /java/basic/
+    - title: Java 컬렉션
+      url: /java/collections/
+    - title: Java 멀티스레딩
+      url: /java/multithreading/
+
+- title: 자료구조
+  children:
+    - title: 배열 & 리스트
+      url: /data-structure/array-list/
+    - title: 트리 & 그래프
+      url: /data-structure/tree-graph/
+    - title: 해시 테이블
+      url: /data-structure/hash-table/
+

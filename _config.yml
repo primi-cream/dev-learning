@@ -50,9 +50,12 @@ exclude:
   - _drafts
 
 collections:
-  categories:
+  java:
     output: true
-    permalink: /categories/:name/  
+    permalink: /java/:name/
+  data-structure:
+    output: true
+    permalink: /java/:title/
   pages:
     output: true
     permalink: /:collection/:path/
