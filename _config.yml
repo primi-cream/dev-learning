@@ -52,10 +52,10 @@ exclude:
 collections:
   java:
     output: true
-    permalink: /java/:name/
+    permalink: /java/:path/
   data-structure:
     output: true
-    permalink: /java/:title/
+    permalink: /data-structure/:path/
   pages:
     output: true
     permalink: /:collection/:path/
