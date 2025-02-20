@@ -50,6 +50,9 @@ exclude:
   - _drafts
 
 collections:
+  categories:
+    output: true
+    permalink: /categories/:name/  
   pages:
     output: true
     permalink: /:collection/:path/
@@ -72,4 +75,8 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
-  
+
+toc:
+  enabled: true
+  h_min: 1
+  h_max: 3  

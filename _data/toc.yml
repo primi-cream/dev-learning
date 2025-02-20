@@ -1,0 +1,6 @@
+- title: 📂 카테고리
+  children:
+    - title: Java
+      url: /categories/Java/
+    - title: 자료구조
+      url: /categories/자료구조/
