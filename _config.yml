@@ -9,7 +9,7 @@ description: >
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://localhost:4000'
+url:              'https://side.or.kr'
 baseurl:          '/dev-learning'
 rss:              RSS
 
