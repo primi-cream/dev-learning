@@ -112,9 +112,9 @@ public class Var1 {
 
 > #### 주요 내용
 >
-> 예약어 사용 X
-> 공백 사용 X
-> 숫자로 시작 X
+> 예약어 사용 X <br>
+> 공백 사용 X <br>
+> 숫자로 시작 X 
 {: .block-tip }
 
 **자료형(Data Type)**: 변수의 종류,단위로 변수의 종류에 따라 담을 수 있는 데이터의 타입과 크기가 다름
@@ -190,11 +190,116 @@ public class Var2 {
 
 > #### 주요 내용
 >
-> float의 경우 f를 뒤에 붙여줄 것 (ex. 1.23f)
-> 2진수 → 0b, 8진수 → 0, 16진수 → 0x 
-> Integer.MIN_VALUE, MAX_VALUE
-> Integer.toBinaryString,toOctalString,toHexString
+> float의 경우 f를 뒤에 붙여줄 것 (ex. 1.23f) <br>
+> 2진수 → 0b, 8진수 → 0, 16진수 → 0x <br>
+> Integer.MIN_VALUE, MAX_VALUE <br>
+> Integer.toBinaryString,toOctalString,toHexString <br>
 > Type Casting
 {: .block-tip }
 
+**문자열(String)**
+- 문자들로 이루어진 집합
+- String Method : equals, indexOf, replace, substring, toUpperCase
+
+**StringBuffer**
+- 문자열을 자주 추가하거나 변경할 때 사용하는 자료형
+```java
+StringBuffer sb1 = new StringBuffer("Hello World!");
+```
+- StringBuffer Method : append, insert, substring
+
+**배열(Array)**
+- 많은 수의 데이터를 담을 수 있는 자료형
+```java
+int[] myArray1 = {1,2,3,4,5};
+char[] myAraay2 = {'a','b','c','d','e'};
+```
+
+<details>
+<summary>📘 Java String,Array 예제(Click!)</summary>
+<pre><code>
+package variable.java_02_3;
+
+public class Var3 {
+    public static void main(String[] args) {
+
+//      1.자료형 - 문자열
+        System.out.println("== 문자열 ==");
+        String s1 = "Hello World!";
+        System.out.println("s1 = " + s1);
+        String s2 = "01234";
+        System.out.println("s2 = " + s2);
+
+
+//      1-1. equals
+        String s3 = "Hi";
+        String s4 = "Hi";
+        System.out.println(s3.equals(s4));
+        System.out.println(s3 == s4);
+        String s5 = new String("Hi");
+        System.out.println(s3.equals(s5));
+        System.out.println(s3 == s5);
+
+//      1-2. indexOf
+        String s6 = "Hello! World!";
+        System.out.println(s6.indexOf("!"));
+        System.out.println(s6.indexOf("!", s6.indexOf("!") + 1));
+
+//      1-3. replace
+        String s7 = s6.replace("Hello", "Bye");
+        System.out.println("s7 = " + s7);
+
+//      1-4. subString
+        System.out.println(s7.substring(0, 3));
+        System.out.println(s7.substring(0, s7.indexOf("!") + 1));
+
+//      1-5. toUpperCase
+        System.out.println(s7.toUpperCase());
+
+//      2. 자료형 - StringBuffer
+        System.out.println("== StringBuffer ==");
+        StringBuffer sb1 = new StringBuffer();
+        sb1.append("01234");
+        System.out.println("sb1 = " + sb1);
+        sb1.append("56789");
+        System.out.println("sb1 = " + sb1);
+
+        String a = "01234";
+        String b = "56789";
+        String bak = a;
+        System.out.println(a == bak);
+
+        a += b;
+        System.out.println(a);
+        System.out.println(a == bak);
+
+
+//      3. 자료형 - 배열
+        System.out.println("== 배열 ==");
+        int[] myArray1 = {1, 2, 3, 4, 5};
+        System.out.println(myArray1[0]);
+        System.out.println(myArray1[1]);
+        System.out.println(myArray1[2]);
+        System.out.println(myArray1[3]);
+        System.out.println(myArray1[4]);
+
+        char[] myArray2 = {'a', 'b', 'c', 'd', 'e'};
+        System.out.println(myArray2[2]);
+
+        String[] myArray3 = new String[3];
+        myArray3[0] = "Hello";
+        myArray3[1] = " ";
+        myArray3[2] = "World!";
+        System.out.println(myArray3[0] + myArray3[1] + myArray3[2]);
+    }
+}
+</code></pre>
+</details>
+
+> #### 주요 내용
+> equals와 == 의 차이 (equality, identity)<br>
+> indexOf, replace, subString, toUpperCase 등의 문자열 Method<br>
+> StringBuffer의 사용방식<br>
+> Array의 사용방식
+{: .block-tip }
 
