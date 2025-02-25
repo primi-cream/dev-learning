@@ -6,8 +6,7 @@ categories: [Java]
 tags: [Java]
 ---
 
-
-# Java 기초
+# Java basic
 
 ## Java Platform
 > 📌 Java의개발 환경
