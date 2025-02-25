@@ -74,10 +74,6 @@ destination:      ./_site
 incremental:      false
 regenerate:       true
 
-gitbook:
-  plugins:
-    - "-title"
-
 plugins:
   - jekyll-feed
   - jekyll-readme-index
