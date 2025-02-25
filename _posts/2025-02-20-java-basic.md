@@ -15,7 +15,7 @@ tags: [Java]
 - Java ME(Micro Edition) : 모바일, 임베디드 시스템 개발 환경
 
 
-## Variable
+## Variable & Data Type
 
 > 📌 Java의 변수와Naming Convention
 
@@ -464,9 +464,235 @@ public class Var4 {
 > 1. sort → Comparator.reverseOrder
 > 2. contains → list.contains(찾을 값);
 
+<br><br>
+
+## Operation
+
+**Term & Operator**
+- 단항 연산자 : 항이 한 개 
+```java
+num++
+```
+- 이항 연산자 : 항이 두 개 
+```java
+1 + 1
+```
+- 삼항 연산자 : 항이 세 개 
+```java
+(3 > 1) ? 1 : 0
+```
+- 대입 연산자 : 우측의 데이터를 좌측의 변수에 대입 
+```java
+int num = 100;
+```
+- 부호 연산자 : 부호를 나타내는 연산자 
+```java
++10, -10
+```
+- 산술 연산자 : +,-,\*,/,% 
+```java
+10 % 3
+```
+- 증가/감소 연산자 : 값을 1만큼 늘리거나(++), 1만큼 줄임(--) 
+```java
+num++, ++num, num--, --num
+```
+- 관계 연산자(>, <, >=, <=, ==, !=) : 두 항의 값 크기를 비교하며 결과 값은 true,false 
+```java
+10 > 9 // true
+```
+- 논리 연산자(&&, ||, !) : 논리식에 대해 참 거짓을 판단하며 결과값은 ture,false 
+```java
+(10 > 9) && (1 == 0)
+```
+- 복합 대입 연산자: 대입 연산자와 다른 연산자를 조합한 연산
+```java
+num1 += num2; // num1 = num1 + num2 
+```
+<br>
+<details>
+<summary>📘 Java opration 예제(Click!)</summary>
+<pre><code>
+package variable.java_03_1;
+
+public class Operation {
+    public static void main(String[] args) {
+
+//      1. 대입 연산, 부호 연산자
+        int num = 100;
+        num = +10;
+        num = 10;
+        num = -10;
+
+//      2. 산술 연산자, 증가/감소 연산자
+        System.out.println("== 산술 연산자, 증가/감소 연산자 ==");
+        int numX = 10;
+        int numY = 3;
+        int result = 0;
+        result = numX + numY;
+        result = numX - numY;
+        result = numX * numY;
+        result = numX / numY;
+        result = numX % numY;
+        System.out.println("result = " + result);
+
+        int numZ = 1;
+        System.out.println(numZ++);
+        System.out.println(numZ);
+
+        numZ = 1;
+        System.out.println(numZ--);
+        System.out.println(numZ);
+
+        numZ = 1;
+        System.out.println(--numZ);
+        System.out.println(numZ);
+
+//      3. 관계 연산자
+        System.out.println("== 관계 연산자 ==");
+        int numA = 10;
+        int numB = 9;
+
+        System.out.println(numA > numB);
+        System.out.println(numA < numB);
+        System.out.println(numA == numB);
+        System.out.println(numA != numB);
 
 
+//      4. 논리 연산자
+        System.out.println("== 논리 연산자 ==");
+        System.out.println((10 > 9) && (1 == 0));
+        System.out.println((10 > 9) || (1 == 0));
 
+//      5. 복합 대입 연산자
+        System.out.println("== 복합 대입 연산자 ==");
+        int num1 = 10;
+        int num2 = 5;
+        num1 += num2;
+        System.out.println("num1 = " + num1);
+        num1 -= num2;
+        num1 *= num2;
 
+//      6. 삼항 연산자
+        System.out.println("== 삼항 연산자 ==");
+        int a = 100;
+        String aResult = (a == 100) ? "yes" : "no";
+        System.out.println("aResult = " + aResult);
 
+    }
+}
 
+</code></pre>
+</details>
+<br><br>
+
+> #### 주요 내용
+> 각 연산자의 사용법<br>
+> Prifix,Postfix의 차이점 → 현재값의 증감시기의 반환 전/후로 나눠짐
+
+<br>
+
+**비트 연산자(Bitwise Operators)**
+- 비트 단위의 연산 (2진법 - Binary)
+| 연산자 | 설명 | 예제 (`a = 5 (0101)`, `b = 3 (0011)`) |
+|:--------:|:-----------------:|:------------------:|
+| `&` (AND) | 둘 다 1일 때만 1 | `a & b` → `0001` (1) |
+| `|` (OR) | 하나라도 1이면 1 | `a | b` → `0111` (7) |
+| `^` (XOR) | 다르면 1 | `a ^ b` → `0110` (6) |
+| `~` (NOT) | 비트를 반전 (1 → 0, 0 → 1) | `~a` → `1111...1010` (-6, 2의 보수 표현) |
+| `<<` (Left Shift) | 왼쪽으로 N비트 이동 | `a << 1` → `1010` (10) |
+| `>>` (Right Shift) | 오른쪽으로 N비트 이동 (부호 유지) | `a >> 1` → `0010` (2) |
+| `>>>` (Unsigned Right Shift) | 부호 비트 포함하여 이동 | `a >>> 1` → `0010` (2, 부호 고려 X) |
+
+<br>
+<details>
+<summary>📘 Java Bitwise Operators 예제 (Click!)</summary>
+<pre><code>
+package variable.java_03_2;
+
+public class Operation2 {
+    public static void main(String[] args) {
+
+//      1. 비트 논리 연산자
+        System.out.println("== 비트 논리 연산자 ==");
+//      1-1. AND 연산자 (&)
+        System.out.println("== & ==");
+        int num1 = 5; // 0101
+        int num2 = 3; // 0011
+        int result = 0;
+
+        result = num1 & num2; // 0001
+        System.out.println("result = " + result);
+        System.out.println(Integer.toBinaryString(num1));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(num1)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(num2)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(result)));
+
+//      1-2. OR 연산자 (|)
+        System.out.println("== | ==");
+
+        result = num1 | num2; // 0111
+        System.out.println("result = " + result);
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(num1)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(num2)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(result)));
+
+//      1-3. XOR 연산자 (^)
+        System.out.println("== XOR ==");
+
+        result = num1 ^ num2;
+        System.out.println("result = " + result);
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(num1)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(num2)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(result)));
+
+//      1-4. 반전 연산자 (~)
+        System.out.println("== ~ ==");
+        num1 = 5;
+
+        result = ~num1;
+        System.out.println("result = " + result);
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(num1)));
+        System.out.printf("%s\n", Integer.toBinaryString(result));
+
+//      2. 비트 이동 연산자
+        System.out.println("== 비트 이동 연산자 ==");
+
+//      2-1. <<  연산자
+        int numA = 3;
+        result = numA << 1;
+
+        System.out.println("numA = " + numA);
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(numA)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(result)));
+
+//      2-2. >> 연산자
+        result = numA >> 1;
+        System.out.println("result = " + result);
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(numA)));
+        System.out.printf("%04d\n", Integer.parseInt(Integer.toBinaryString(result)));
+
+//      2-3. >>> 연산자
+        numA = -5;
+        result = numA >> 1;
+        System.out.printf("%s\n", Integer.toBinaryString(numA));
+        System.out.printf("%s\n", Integer.toBinaryString(result));
+
+        result = numA >>> 1;
+        System.out.printf("%s\n", Integer.toBinaryString(numA));
+        System.out.printf("%s\n", Integer.toBinaryString(result));
+    }
+}
+
+</code></pre>
+</details>
+
+<br><br>
+
+> #### 주요 내용
+> 논리 연산 (AND, OR, XOR, NOT) <br>
+> 비트 이동 연산 (<<, >>, >>>) → Shift Operation<br>
+
+<br>
+
+## 조건문(Conditional Statement)
