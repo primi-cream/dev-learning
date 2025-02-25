@@ -42,7 +42,7 @@ String country = "Korea";
 
 <details>
 <summary>📘 Java Variable 코드 예제</summary>
-{% raw %}
+
 ```java
 package variable.java_02_1;
 
@@ -59,14 +59,14 @@ public class Var1 {
 
 //      2. 변수 이름 규칙
         System.out.println("== 변수 이름 규칙 ==");
-//      2-1. 문자, 숫자, _(underscore), $ 사용 가능
+//      2-1. 문자, 숫자, _(underscore), \u0024 사용 가능
         int apple = 2000;
         int apple3 = 2000;
         int _apple = 2000;
-        int $apple = 2000;
+        int \u0024apple = 2000;
 
-        System.out.println($apple);
-        System.out.println("$apple = " + $apple);
+        System.out.println(\u0024apple);
+        System.out.println("\u0024apple = " + \u0024apple);
 
 //      2-2. 숫자로 시작 X
 //      int 3apple = 2000;
@@ -110,7 +110,6 @@ public class Var1 {
 }
 
 ```
-{% endraw %}
 </details>
 
 
