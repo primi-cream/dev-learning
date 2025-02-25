@@ -43,7 +43,7 @@ String country = "Korea";
 <details>
 <summary>📘 Java Variable 코드 예제</summary>
 
-```java
+<pre><code class="language-java">
 package variable.java_02_1;
 
 public class Var1 {
@@ -109,7 +109,7 @@ public class Var1 {
     }
 }
 
-```
+</code></pre>
 </details>
 
 
