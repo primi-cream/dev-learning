@@ -3,7 +3,7 @@ layout: post
 title: "Java 기초"
 date: 2025-02-25
 categories: [Java]
-tags: [Java,Variable,변수,Array,Generics,List,,Map,String,진수]
+tags: [Java]
 ---
 
 # Java basic
