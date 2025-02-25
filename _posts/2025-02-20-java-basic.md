@@ -42,7 +42,7 @@ String country = "Korea";
 
 <details>
 <summary>📘 Java Variable 코드 예제</summary>
-<br>
+{% raw %}
 ```java
 package variable.java_02_1;
 
@@ -110,6 +110,7 @@ public class Var1 {
 }
 
 ```
+{% endraw %}
 </details>
 
 
