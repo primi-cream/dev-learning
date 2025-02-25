@@ -109,13 +109,17 @@ public class Var1 {
 
 </code></pre>
 </details>
+<br>
 
 > #### 주요 내용
 >
-> 예약어 사용 X <br>
-> 공백 사용 X <br>
-> 숫자로 시작 X 
+> 1. 예약어 사용 X <br>
+> 2. 공백 사용 X <br>
+> 3. 숫자로 시작 X 
 {: .block-tip }
+
+<br>
+
 
 **자료형(Data Type)**: 변수의 종류,단위로 변수의 종류에 따라 담을 수 있는 데이터의 타입과 크기가 다름
 - 숫자(Number)
@@ -188,14 +192,18 @@ public class Var2 {
 </code></pre>
 </details>
 
+<br>
 > #### 주요 내용
 >
-> float의 경우 f를 뒤에 붙여줄 것 (ex. 1.23f) <br>
-> 2진수 → 0b, 8진수 → 0, 16진수 → 0x <br>
-> Integer.MIN_VALUE, MAX_VALUE <br>
-> Integer.toBinaryString,toOctalString,toHexString <br>
-> Type Casting
+> 1. float의 경우 f를 뒤에 붙여줄 것 (ex. 1.23f) <br>
+> 2. 2진수 → 0b, 8진수 → 0, 16진수 → 0x <br>
+> 3. Integer.MIN_VALUE, MAX_VALUE <br>
+> 4. Integer.toBinaryString,toOctalString,toHexString <br>
+> 5. Type Casting
 {: .block-tip }
+
+<br><br>
+
 
 **문자열(String)**
 - 문자들로 이루어진 집합
@@ -215,6 +223,7 @@ int[] myArray1 = {1,2,3,4,5};
 char[] myAraay2 = {'a','b','c','d','e'};
 ```
 
+<br>
 <details>
 <summary>📘 Java String,Array 예제(Click!)</summary>
 <pre><code>
@@ -296,10 +305,168 @@ public class Var3 {
 </code></pre>
 </details>
 
+<br>
 > #### 주요 내용
-> equals와 == 의 차이 (equality, identity)<br>
-> indexOf, replace, subString, toUpperCase 등의 문자열 Method<br>
-> StringBuffer의 사용방식<br>
-> Array의 사용방식
+> 1. equals와 == 의 차이 (equality, identity)<br>
+> 2. indexOf, replace, subString, toUpperCase 등의 문자열 Method<br>
+> 3. StringBuffer의 사용방식<br>
+> 4. Array의 사용방식
 {: .block-tip }
+
+
+<br><br>
+**리스트(List)**
+- 배열과 같이 여러 데이터를 담을 수 있는 자료형
+- 추가로 여러가지 Method 제공
+```java
+ArrayList l1 = new ArrayList();
+l1.add(1);
+```
+- 리스트 Method : add, get, size, remove, clear, sort, contains
+
+
+**맵(Map)**
+- key,value 형태로 데이터를 저장하는 자료형
+```java
+HashMap<String,String>map = new HashMap<String,String>();
+map.put("product","kiwi");
+map.put("price","9000");
+```
+- Map Method : put, get, size, remove, containsKey
+
+
+**제네릭스(Generics)**
+- 자료형을 명시적으로 지정
+- 제한적일 수 있으나 안정성을 높여주고 형변환을 줄여줌
+```java
+ArrayList<String> l1 = new ArrayList<String>();
+HashMap<String,Integer> map1 = new HashMap<String,Integer>();
+```
+
+
+<details>
+<summary>📘 Java List,Map 예제(Click!)</summary>
+<pre><code>
+package variable.java_02_4;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+
+public class Var4 {
+    public static void main(String[] args) {
+
+//      1. 자료형 - 리스트
+        System.out.println("== 리스트 ==");
+        ArrayList l1 = new ArrayList();
+
+//      1-1. add
+        l1.add(1);
+        l1.add("hello");
+        l1.add(2);
+        l1.add(3);
+        l1.add(4);
+        l1.add("world");
+        System.out.println("l1 = " + l1);
+
+        l1.add(0, 1);
+        System.out.println("l1 = " + l1);
+
+//      1-2. get
+        System.out.println(l1.get(0));
+        System.out.println(l1.get(3));
+
+
+//      1-3. size
+        System.out.println(l1.size());
+
+//      1-4. remove
+        System.out.println(l1.remove(0));
+        System.out.println("l1 = " + l1);
+
+        System.out.println(l1.remove(Integer.valueOf(2)));
+        System.out.println("l1 = " + l1);
+
+//      1-5. clear
+        l1.clear();
+        System.out.println("l1 = " + l1);
+
+//      1-6. sort
+        ArrayList l2 = new ArrayList();
+        l2.add(5);
+        l2.add(3);
+        l2.add(4);
+        System.out.println("l2 = " + l2);
+
+        l2.sort(Comparator.naturalOrder());
+        System.out.println("l2 = " + l2);
+        l2.sort(Comparator.reverseOrder());
+        System.out.println("l2 = " + l2);
+
+//      1-7. contains
+        System.out.println(l2.contains(1));
+        System.out.println(l2.contains(3));
+
+//      2. Maps
+        System.out.println("== Maps ==");
+        HashMap map = new HashMap();
+
+//      2-1. put
+        map.put("kiwi", 9000);
+        map.put("apple", 10000);
+        map.put("mango", 12000);
+        System.out.println("map = " + map);
+
+//      2-2. get
+        System.out.println(map.get("mandarine"));
+        System.out.println(map.get("kiwi"));
+
+//      2-3. size
+        System.out.println(map.size());
+
+//      2-4. remove
+        System.out.println(map.remove("kiwi"));
+        System.out.println(map.remove("mandarine"));
+        System.out.println(map.remove("map = " + map));
+
+//      2-5. containsKey
+        System.out.println(map.containsKey("apple"));
+        System.out.println(map.containsKey("kiwi"));
+
+//      3. Generics
+        System.out.println("== Generics ==");
+        ArrayList l3 = new ArrayList();
+        l3.add(1);
+        l3.add("hello");
+        System.out.println("l3 = " + l3);
+
+        ArrayList<String> l4 = new ArrayList<String>();
+        l4.add("hello");
+        System.out.println("l4 = " + l4);
+
+        HashMap map1 = new HashMap();
+        map1.put(123, "id");
+        map1.put("appple", 10000);
+        System.out.println("map1 = " + map1);
+        
+        HashMap<String, Integer> map2 = new HashMap<>();
+//      map2.put(123, "id");
+        map2.put("apple", 10000);
+        System.out.println("map2 = " + map2);
+    }
+}
+
+</code></pre>
+</details>
+<br>
+
+> #### 주요 내용
+> 1. sort → Comparator.reverseOrder
+> 2. contains → list.contains(찾을 값);
+
+
+
+
+
+
 
