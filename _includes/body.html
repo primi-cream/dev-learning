@@ -18,13 +18,12 @@
                     {% else %}
                         <h1 id="{{ page.id }}">{{ site.title | escape }}</h1>
                     {% endif %}
-
+		-->
                     {{ content }}
 
                     {%- if jekyll.environment != 'dev' and site.disqushandler -%}
                         {%- include disqus.html -%}
                     {%- endif -%}
-		-->
                 </section>
             </div>
 
