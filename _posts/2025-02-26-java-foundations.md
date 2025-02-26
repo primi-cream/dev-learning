@@ -642,7 +642,182 @@ public class Practice2 {
 
 <br><br>
 
+## 다형성(Polymorphism)
+> 한 객체가 여러 가지 타입을 가질 수 있는 것<br>
+> 부모클래스 타입의 참조 변수로 자식클래스 인스턴스 참조<br>
+```java
+class Person{}
+class Student extends Person{}
 
- 
+Person p1 = new Student();
+// Student s1 = new Person();
+```
+<br><br>
+### instanceof
+- 실제 참조하고 있는 인스턴스의 타입 확인
+```java
+class Person{}
+class Student extends Person{}
+
+Person p1 = new Student();
+// Student s1 = new Person();
+System.out.println(p1 instanceof Person);
+```
+
+<br><br>
+<details markdown="1">
+<summary>📘 Java Polymorphism 예시(Click!)</summary>
+```java
+class Person {
+    public void print() {
+        System.out.println("Person.print");
+    }
+}
+
+class Student extends Person {
+    public void print() {
+        System.out.println("Student.print");
+    }
+
+    public void print2() {
+        System.out.println("Student.print2");
+    }
+}
+
+class CollegeStudent extends Person {
+    public void print() {
+        System.out.println("CollegeStudent.print");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. 다형성
+        System.out.println("== 다형성 ==");
+        Person p1 = new Person();
+        Student s1 = new Student();
+
+        Person p2 = new Student();
+
+        p1.print();
+        s1.print();
+        s1.print2();
+        p2.print();
+
+        Person p3 = new CollegeStudent();
+        p3.print();
+
+        // 2. 타입 변환
+        System.out.println("== 타입 변환 ==");
+        Person pp1 = null;
+        Student ss1 = null;
+
+        Person pp2 = new Person();
+        Student ss2 = new Student();
+        Person pp3 = new Student(); // 업캐스팅
+
+        pp1 = pp2;
+        pp1 = ss2;
+
+        ss1 = ss2;
+        ss1 = (Student) pp3; // 다운캐스팅
+
+        CollegeStudent cc1;
+        CollegeStudent cc2 = new CollegeStudent();
+        ss1 = (Student) cc2;
+        cc1 = (CollegeStudent) ss2;
+    
+//      3. instanceof  
+        System.out.println("== instanceof ==");
+        Person pe1 = new Person();
+        Student st1 = new Student();
+        Person pe2 = new Student();
+        Person pe3 = new CollegeStudent();
+
+        System.out.println(pe1 instanceof Person);
+        System.out.println(pe1 instanceof Student);
+
+        System.out.println(st1 instanceof Student);
+        System.out.println(st1 instanceof Person);
+
+        System.out.println(pe2 instanceof Person);
+        System.out.println(pe2 instanceof Student);
+
+        System.out.println(pe3 instanceof Person);
+        System.out.println(pe3 instanceof CollegeStudent);
+
+        if (pe1 instanceof Student) {
+            Student stu1 = (Student) pe1;
+        }       
+
+        if (st1 instanceof Person) {
+            Person per1 = (Person) st1;
+        }
+
+
+    }
+}
+
+=============================================================================
+
+// Practice
+// 아래의 클래스와 상속 관계에서 다형성을 이용하여
+// Car 객체를 통해 아래와 같이 출력될 수 있도록 Test code 부분을 구현해보세요.
+// 
+// 빵빵!
+// 위이잉!
+// 삐뽀삐뽀!
+
+class Car {
+    Car() {}
+
+    public void horn() {
+        System.out.println("빵빵!");
+    }
+}
+
+class FireTruck extends Car {
+    public void horn() {
+        System.out.println("위이잉!");
+    }
+}
+
+class Ambulance extends Car {
+    public void horn() {
+        System.out.println("삐뽀삐뽀!");
+    }
+}
+
+public class Practice {
+    public static void main(String[] args) {
+        // Test code
+        Car car = new Car();
+        car.horn();
+
+        car = new FireTruck();
+        car.horn();
+
+        car = new Ambulance();
+        car.horn();
+
+        Car car2[] = {new Car(), new FireTruck(), new Ambulance()};
+
+        for (Car item : car2) {
+            item.horn();
+        }
+    }
+}
+
+
+```
+</details>
+
+<br><br>
+> ### 주요 사항
+> Polymorphism에 대한 개념과 사용방식
+
+<br><br>
+
+
 
 
