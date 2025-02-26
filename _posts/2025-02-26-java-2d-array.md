@@ -1,10 +1,10 @@
 
 ---
 layout: post
-title: "Java 기초"
+title: "Java - 다차원배열"
 date: 2025-02-26
 categories: [Java]
-tags: [Java]
+tags: [Java,Array]
 ---
 
 
