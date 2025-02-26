@@ -4,25 +4,28 @@ date: 2025-02-26
 categories: [Java]
 layout: post
 tags: [Java, Array]
+mermaid: true
 ---
 
 
 ## 다차원 배열
 - 일차원 배열
-```java
-int[] myArray1 = {1, 2, 3, 4, 5};
-```
-- 이차원 배열
-```java
-int[][] myArray3 = {{1, 2, 3}, {4, 5, 6}};
-int[][][] myArray4 = {{{1, 2}, {3, 4}},{{5, 6}, {7, 8}}};
-```
 
+<pre><code>
+int[] myArray1 = {1, 2, 3, 4, 5};
+</code></pre>
+
+- 이차원 배열
+<pre><code>
+int[][] myArray3 = { {1, 2, 3}, {4, 5, 6} };
+int[][][] myArray4 = { { {1, 2}, {3, 4} },{ {5, 6}, {7, 8} } };
+</code></pre>
 <br>
 
 <details>
 <summary>📘 Java 다차원 배열 예제(Click!)</summary>
-```java
+
+<pre><code>
 package array;
 
 public class Main {
@@ -43,7 +46,7 @@ public class Main {
 
         // 2. 이차원 배열
         System.out.println("== 이차원 배열 ==");
-        int[][] myArray2 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] myArray2 = { {1, 2, 3}, {4, 5, 6} };
         System.out.println("myArray2[1][2] = " + myArray2[1][2]);
 
         for (int i = 0; i < myArray2.length; i++) {
@@ -60,7 +63,7 @@ public class Main {
 
         // Q1. 아래와 같이 3x3 행렬을 2차원 배열로 초기화 되어있다.
         // 모든 원소를 1로 변경, 대각 원소는 10으로 변경
-        int[][] testArray1 = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+        int[][] testArray1 = { {0, 0, 0}, {0, 0, 0}, {0, 0, 0} };
 
         for (int i = 0; i < testArray1.length; i++) {
             for (int j = 0; j < testArray1[i].length; j++) {
@@ -80,7 +83,7 @@ public class Main {
         }
     }
 }
-```
+</code></pre>
 </details>
 
 <br><br>
