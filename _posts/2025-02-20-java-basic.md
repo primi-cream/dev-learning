@@ -464,6 +464,7 @@ public class Var4 {
 > 1. sort → Comparator.reverseOrder
 > 2. contains → list.contains(찾을 값);
 {: .block-tip }
+
 <br><br>
 
 ## Operation
