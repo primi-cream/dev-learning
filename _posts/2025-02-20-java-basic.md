@@ -458,12 +458,12 @@ public class Var4 {
 
 </code></pre>
 </details>
-<br>
 
+<br>
 > #### 주요 내용
 > 1. sort → Comparator.reverseOrder
 > 2. contains → list.contains(찾을 값);
-
+{: .block-tip }
 <br><br>
 
 ## Operation
@@ -589,7 +589,7 @@ public class Operation {
 > #### 주요 내용
 > 각 연산자의 사용법<br>
 > Prifix,Postfix의 차이점 → 현재값의 증감시기의 반환 전/후로 나눠짐
-
+{: .block-tip }
 <br>
 
 ### **비트 연산자(Bitwise Operators)**
@@ -692,7 +692,7 @@ public class Operation2 {
 > #### 주요 내용
 > 논리 연산 (AND, OR, XOR, NOT) <br>
 > 비트 이동 연산 (<<, >>, >>>) → Shift Operation<br>
-
+{: .block-tip }
 <br>
 
 ## 조건문(Conditional Statement)
@@ -827,7 +827,7 @@ public class Main {
 
 > #### 주요 내용
 > if와 switch문의 사용법<br>
-
+{: .block-tip }
 <br><br>
 
 ## 반복문(Loop Statement)
@@ -984,7 +984,7 @@ public class Main {
 > #### 주요 내용
 > 1. countinue, break의 사용법<br>
 > 2. for, while, do-while의 사용법과 차이 <br>
-
+{: .block-tip }
 <br>
 
 
