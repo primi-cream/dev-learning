@@ -9,10 +9,13 @@ tags: [Java, Array]
 
 ## 다차원 배열
 - 일차원 배열
+  
 ```java
 int[] myArray1 = {1, 2, 3, 4, 5};
 ```
+
 - 이차원 배열
+
 ```java
 int[][] myArray3 = {{1, 2, 3}, {4, 5, 6}};
 int[][][] myArray4 = {{{1, 2}, {3, 4}},{{5, 6}, {7, 8}}};
@@ -22,6 +25,7 @@ int[][][] myArray4 = {{{1, 2}, {3, 4}},{{5, 6}, {7, 8}}};
 
 <details>
 <summary>📘 Java 다차원 배열 예제(Click!)</summary>
+
 ```java
 package array;
 
