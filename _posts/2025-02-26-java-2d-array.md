@@ -1,9 +1,9 @@
 ---
-title: Java 기초
+title: "Java 기초"
 date: 2025-02-26
-category: Java
+categories: [Java]
 layout: post
-tags: Java, Array
+tags: [Java, Array]
 ---
 
 
