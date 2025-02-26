@@ -6,6 +6,7 @@ categories: [Java]
 tags: [Java]
 ---
 
+
 # Java basic
 
 ## Java Platform
