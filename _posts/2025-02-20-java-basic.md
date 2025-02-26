@@ -40,10 +40,10 @@ String country = "Korea";
 
 
 
-<details>
+<details markdown="1">
 <summary>📘 Java Variable 코드 예제(Click!)</summary>
 
-<pre><code>
+```java
 package variable.java_02_1;
 
 public class Var1 {
@@ -107,7 +107,7 @@ public class Var1 {
     }
 }
 
-</code></pre>
+```
 </details>
 <br>
 
@@ -127,9 +127,9 @@ public class Var1 {
 - 문자 (Character)
 - 문자열(String)
 
-<details>
+<details markdown="1">
 <summary>📘 Java Data Type 코드예제(Click!)</summary>
-<pre><code>
+```java
 package variable.java_02_2;
 
 public class Var2 {
@@ -189,7 +189,7 @@ public class Var2 {
     }
 }
 
-</code></pre>
+```
 </details>
 
 <br>
@@ -224,9 +224,9 @@ char[] myAraay2 = {'a','b','c','d','e'};
 ```
 
 <br>
-<details>
+<details markdown="1">
 <summary>📘 Java String,Array 예제(Click!)</summary>
-<pre><code>
+```java
 package variable.java_02_3;
 
 public class Var3 {
@@ -302,7 +302,7 @@ public class Var3 {
         System.out.println(myArray3[0] + myArray3[1] + myArray3[2]);
     }
 }
-</code></pre>
+```
 </details>
 
 <br>
@@ -512,9 +512,9 @@ num++, ++num, num--, --num
 num1 += num2; // num1 = num1 + num2 
 ```
 <br>
-<details>
+<details markdown="1">
 <summary>📘 Java opration 예제(Click!)</summary>
-<pre><code>
+```java
 package variable.java_03_1;
 
 public class Operation {
@@ -584,7 +584,7 @@ public class Operation {
     }
 }
 
-</code></pre>
+```
 </details>
 <br><br>
 
@@ -607,9 +607,9 @@ public class Operation {
 | `>>>` (Unsigned Right Shift) | 부호 비트 포함하여 이동 | `a >>> 1` → `0010` (2, 부호 고려 X) |
 
 <br>
-<details>
+<details markdown="1">
 <summary>📘 Java Bitwise Operators 예제 (Click!)</summary>
-<pre><code>
+```java
 package variable.java_03_2;
 
 public class Operation2 {
@@ -686,7 +686,7 @@ public class Operation2 {
     }
 }
 
-</code></pre>
+```
 </details>
 
 <br><br>
@@ -729,9 +729,9 @@ switch(입력값){
 ```
 
 <br>
-<details>
+<details markdown="1">
 <summary>📘 Java Conditional Statements 예제(Click!)</summary>
-<pre><code>
+```java
 package conditional;
 
 public class Main {
@@ -822,7 +822,7 @@ public class Main {
     }
 }
 
-</code></pre>
+```
 </details>
 
 <br><br>
@@ -857,9 +857,9 @@ do{
 ```
 <br>
 
-<details>
+<details markdown="1">
 <summary>📘 Java Loop Statements(Click!) </summary>
-<pre><code>
+```java
 package loop;
 
 public class Main {
@@ -979,7 +979,7 @@ public class Main {
     }
 }
 
-</code></pre>
+```
 </details>
 <br><br>
 
