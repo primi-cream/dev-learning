@@ -10,7 +10,6 @@ mermaid: true
 
 ## 다차원 배열
 - 일차원 배열
-
 <pre><code>
 int[] myArray1 = {1, 2, 3, 4, 5};
 </code></pre>
