@@ -343,7 +343,12 @@ ArrayList<String> l1 = new ArrayList<String>();
 HashMap<String,Integer> map1 = new HashMap<String,Integer>();
 ```
 <br>
-
+<br>
+<details>
+<summary>📘 Java List,Map 예제(Click!)</summary>
+<pre><code>
+</code></pre>
+</details>
 
 
 <br>
