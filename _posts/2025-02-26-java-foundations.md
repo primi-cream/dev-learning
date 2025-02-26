@@ -818,6 +818,170 @@ public class Practice {
 
 <br><br>
 
+## 추상클래스 (Abstract Class)
+> 하나 이상의 **추상 메소드**를 포함하는 클래스 <br>
+> 반드시 구형해야 하는 부분에 대해 명시적으로 표현 <br>
+> 추상 클래스 자체는 객체 생성 불가
+```java
+abstract class 클래스명{
+    ...
+    abstract void print();
+}
+```
+
+<br>
+
+### 추상메소드 (Abstract Method)
+- 자식 클래스에서 반드시 오버라이딩 해야하는 메소드
+- 선언만하고 구현 내용 없음
+```java
+abstract void print();
+```
+
+<br>
+
+<details markdown="1">
+<summary>📘 Java Abstract Class 예시(Click!)</summary>
+```java
+// Java 프로그래밍 - 추상 클래스
+
+// 추상 클래스 Person
+abstract class Person {
+    abstract void printInfo();
+}
+
+// 추상 클래스 상속
+class Student extends Person {
+    public void printInfo() {
+        System.out.println("Student.printInfo");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // 추상 클래스의 사용
+        // Person p1 = new Person();  // 추상 클래스는 직접 인스턴스화할 수 없음
+        Student s1 = new Student();
+        s1.printInfo();
+
+        Person p2 = new Person() {  // 익명 클래스 사용
+            @Override
+            void printInfo() {
+                System.out.println("Main.printInfo");
+            }
+        };
+        p2.printInfo();
+    }
+}
+
+===============================================================================================
+
+// Practice
+// 아래 Device 추상 클래스를 이용하여
+// UsbPort1 클래스와 WiFi 클래스를 자유롭게 구현해보세요.
+
+abstract class Device {
+    int deviceId;
+
+    abstract void deviceInfo();
+    abstract void connect();
+    abstract void disconnect();
+    abstract void send();
+    abstract void receive();
+}
+
+// UsbPort1 클래스
+class UsbPort1 extends Device {
+    UsbPort1(int id) {
+        this.deviceId = id;
+    }
+
+    void deviceInfo() {
+        System.out.println("id = " + this.deviceId);
+    }
+
+    void connect() {
+        System.out.println("연결 하였습니다.");
+    }
+
+    void disconnect() {
+        System.out.println("연결이 해제되었습니다.");
+    }
+
+    void send() {
+        System.out.println("데이터를 전송합니다.");
+    }
+
+    void receive() {
+        System.out.println("데이터를 수신합니다.");
+    }
+}
+
+// WiFi 클래스
+class WiFi extends Device {
+    public WiFi(int id) {
+        this.deviceId = id;
+    }
+
+    @Override
+    void deviceInfo() {
+        System.out.println("WiFi Device id: " + this.deviceId);
+    }
+
+    @Override
+    void connect() {
+        System.out.println("WiFi에 연결되었습니다.");
+    }
+
+    @Override
+    void disconnect() {
+        System.out.println("WiFi 연결이 해제되었습니다.");
+    }
+
+    @Override
+    void send() {
+        System.out.println("WiFi로 데이터를 전송합니다.");
+    }
+
+    @Override
+    void receive() {
+        System.out.println("WiFi로 데이터를 수신합니다.");
+    }
+}
+
+public class Practice {
+    public static void main(String[] args) {
+        // Test code
+        UsbPort1 usb1 = new UsbPort1(1);
+        WiFi wifi = new WiFi(0);
+
+        usb1.deviceInfo();
+        usb1.connect();
+        usb1.send();
+        usb1.receive();
+        usb1.disconnect();
+
+        wifi.deviceInfo();
+        wifi.connect();
+        wifi.send();
+        wifi.receive();
+        wifi.disconnect();
+    }
+}
+
+
+```
+</details>
+
+<br><br>
+
+> #### 주요 내용
+> 1. Abstract Class, Method의 사용 및 개념, Inheritance의 사용
+> 2. Anonymous class 
+
+<br><br>
+
 
 
 
