@@ -97,7 +97,8 @@ public class Main {
 - 실체와 그것을 정의하는 설계도<br>
 - 클래스로부터 객체를 선언 (Instance)<br>
 <br>
-**클래스의 기본 구조**
+### **클래스의 기본 구조**
+  
 ```java
 public class 클래스명{
     //객체 변수
@@ -108,16 +109,19 @@ public class 클래스명{
 
 클래스명 객체명 = new 클래스명();
 ```
+
 <br><br>
 ### 생성자(Constructor)
 - 객체가 생성될 때 자동으로 호출
 - 생성자 규칙<br> 1.클래스명과 이름맞추기<br> 2.리턴 타입 없음<br>
 <br>
+
 ```java
 public class 클래스명{
     클래스명(){}
 }
 ```
+
 <br><br>
 
 **this,this()**
@@ -127,6 +131,7 @@ public class 클래스명{
 
 <details>
 <summary>📘 Java Class 예제(Click!)</summary>
+    
 ```java
 // Java 프로그래밍 - 클래스와 객체_1
 
