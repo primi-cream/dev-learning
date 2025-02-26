@@ -343,10 +343,10 @@ ArrayList<String> l1 = new ArrayList<String>();
 HashMap<String,Integer> map1 = new HashMap<String,Integer>();
 ```
 <br>
-<br>
-<details>
+
+<details markdown="1">
 <summary>📘 Java List,Map 예제(Click!)</summary>
-<pre><code>
+```java
 package variable.java_02_4;
 
 import java.util.ArrayList;
@@ -456,7 +456,7 @@ public class Var4 {
     }
 }
 
-</code></pre>
+```
 </details>
 
 
