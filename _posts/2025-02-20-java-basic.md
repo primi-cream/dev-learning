@@ -19,7 +19,7 @@ tags: [Java]
 
 > 📌 Java의 변수와Naming Convention
 
-**변수** : 데이터를 저장하는 메모리 공간에 붙여준 이름
+### **변수** : 데이터를 저장하는 메모리 공간에 붙여준 이름
 ```java
 int age = 20;
 String country = "Korea";
@@ -33,7 +33,7 @@ String country = "Korea";
 | 공백 사용 X | int one apple = 2000; |
 | 미리 예약된 이름 사용 X | int true = 1;<br>int if=2;<br>int coutinue = 10;|
 
-**표기법** 
+### **표기법** 
 - 카멜 표기법(camelCase) : 가장 앞의 문자는 소문자, 나머지 단어의 첫 문자는 대문자로 표기<br> ex) myName, zeroBase, iPhone, powerPoiont
 - 파스칼 표기법(PascalCase) : 각 문자의 첫 문자를 대문자로 표기<br> ex) MyName, ZeroBase, IPhone, PowerPoint
 - 스네이크 표기법(snake_case) : 띄어쓰기를 \_(underscore)로 표기<br> ex) my\_name, zero\_base, iphone, power\_point
@@ -121,7 +121,7 @@ public class Var1 {
 <br>
 
 
-**자료형(Data Type)**: 변수의 종류,단위로 변수의 종류에 따라 담을 수 있는 데이터의 타입과 크기가 다름
+### **자료형(Data Type)**: 변수의 종류,단위로 변수의 종류에 따라 담을 수 있는 데이터의 타입과 크기가 다름
 - 숫자(Number)
 - 부울(Boolean)
 - 문자 (Character)
@@ -205,18 +205,18 @@ public class Var2 {
 <br><br>
 
 
-**문자열(String)**
+### **문자열(String)**
 - 문자들로 이루어진 집합
 - String Method : equals, indexOf, replace, substring, toUpperCase
 
-**StringBuffer**
+### **StringBuffer**
 - 문자열을 자주 추가하거나 변경할 때 사용하는 자료형
 ```java
 StringBuffer sb1 = new StringBuffer("Hello World!");
 ```
 - StringBuffer Method : append, insert, substring
 
-**배열(Array)**
+### **배열(Array)**
 - 많은 수의 데이터를 담을 수 있는 자료형
 ```java
 int[] myArray1 = {1,2,3,4,5};
@@ -315,7 +315,7 @@ public class Var3 {
 
 
 <br><br>
-**리스트(List)**
+### **리스트(List)**
 - 배열과 같이 여러 데이터를 담을 수 있는 자료형
 - 추가로 여러가지 Method 제공
 ```java
@@ -325,7 +325,7 @@ l1.add(1);
 - 리스트 Method : add, get, size, remove, clear, sort, contains
 
 
-**맵(Map)**
+### **맵(Map)**
 - key,value 형태로 데이터를 저장하는 자료형
 ```java
 HashMap<String,String>map = new HashMap<String,String>();
@@ -335,14 +335,14 @@ map.put("price","9000");
 - Map Method : put, get, size, remove, containsKey
 
 
-**제네릭스(Generics)**
+### **제네릭스(Generics)**
 - 자료형을 명시적으로 지정
 - 제한적일 수 있으나 안정성을 높여주고 형변환을 줄여줌
 ```java
 ArrayList<String> l1 = new ArrayList<String>();
 HashMap<String,Integer> map1 = new HashMap<String,Integer>();
 ```
-
+<br>
 
 <details>
 <summary>📘 Java List,Map 예제(Click!)</summary>
@@ -468,7 +468,7 @@ public class Var4 {
 
 ## Operation
 
-**Term & Operator**
+### **Term & Operator**
 - 단항 연산자 : 항이 한 개 
 ```java
 num++
@@ -592,7 +592,7 @@ public class Operation {
 
 <br>
 
-**비트 연산자(Bitwise Operators)**
+### **비트 연산자(Bitwise Operators)**
 - 비트 단위의 연산 (2진법 - Binary)
 | 연산자 | 설명 | 예제 (`a = 5 (0101)`, `b = 3 (0011)`) |
 |:--------:|:-----------------:|:------------------:|
@@ -696,7 +696,7 @@ public class Operation2 {
 <br>
 
 ## 조건문(Conditional Statement)
-**if**
+### **if**
 - 조건에 따라 무엇을 실행할지 판단하는 분기 구조
 ```java
 if(조건문1) {
@@ -708,7 +708,8 @@ if(조건문1) {
 }
 ```
 <br>
-**Switch**
+
+### **Switch**
 - 입력 값에 따라 어떤 case를 실행할지 판단하는 분기 구조
 ```java
 switch(입력값){
@@ -831,7 +832,7 @@ public class Main {
 
 ## 반복문(Loop Statement)
 
-**for**
+### **for**
 - 주어진 횟수만큼 반복하여 실행하는 구조
 ```java
 for(초기치;조건문;증가치;){
@@ -841,7 +842,7 @@ for(초기치;조건문;증가치;){
 
 <br><br>
 
-**while**
+### **while**
 - 조건문이 만족하는 동안 반복하여 실행하는 구조(while/do-while)
 ```java
 while(조건문){
