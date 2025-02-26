@@ -995,10 +995,4 @@ public class Main {
 <br>
 
 
-<<<<<<< HEAD
-=======
-<br>
 
-
-
->>>>>>> 76ef06821ea3cd73aa390d3c522b166eeda0e52f

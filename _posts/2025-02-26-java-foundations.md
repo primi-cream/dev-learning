@@ -1,5 +1,5 @@
 ---
-title: "Java 기초"
+title: "Java 기본"
 date: 2025-02-26
 categories: [Java]
 layout: post
@@ -7,6 +7,7 @@ tags: [Java, Array]
 mermaid: true
 ---
 
+# Java Foundations
 
 ## 다차원 배열
 - 일차원 배열
