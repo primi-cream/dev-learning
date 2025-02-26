@@ -129,7 +129,7 @@ public class 클래스명{
 - this() : 생성자<br>
 <br>
 
-<details>
+<details markdown="1">
 <summary>📘 Java Class 예제(Click!)</summary>
     
 ```java
@@ -285,9 +285,9 @@ public class 클래스명{
 <br><br>
 
 ### 접근제어자(Access Modifiers)
-- 1. private : 해당 클래스에서만 접근 가능<br>
-- 2. public : 어디서든 접근 가능 <br>
-- 3. default : 해당 패키지 및 상속받은 클래스에서 접근 가능 <br>
+-  private : 해당 클래스에서만 접근 가능<br>
+-  public : 어디서든 접근 가능 <br>
+-  default : 해당 패키지 및 상속받은 클래스에서 접근 가능 <br>
 
 <br><br>
 
@@ -301,7 +301,7 @@ public class 클래스명{
 <br><br>
 
 
-<details>
+<details markdown="1">
 <summary>📘 Java Overloding & Modifier & Static 예제</summary>
 ```java
 // Java 프로그래밍 - 클래스와 객체_2
