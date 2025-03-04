@@ -1525,7 +1525,7 @@ try{
 ```
 <br><br>
 
-<details>
+<details markdown="1">
 <summary>📘 Java Exception 예제(Click!)</summary>
 ```java
 class NotTenException extends RuntimeException {}
