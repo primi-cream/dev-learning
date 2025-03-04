@@ -1491,8 +1491,8 @@ public class Practice {
 1. 0으로 나누기<br>
 2. 배열의 인텍스 초과 <br>
 3. 없는 파일 열기<br>
-...<br>
-<br>
+...
+
 ### 예외 처리 (Exception Handling)
 - 정상적이지 않은 Case에 대한 적절한 처리 방법
 ```java
@@ -1504,7 +1504,8 @@ try{
     ...
 }
 ```
-<br><br>
+<br>
+
 ### finally
 - 예외 발생 여부와 관계 없이 항상 실행되는 부분
 ```java
