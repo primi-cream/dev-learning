@@ -1018,7 +1018,7 @@ class 클래스이름 extends 클래스이름 implements 인터페이스이름{
     ...
 }
 ```
-<details>
+<details markdown="1">
 <summary>📘 Java Interface 예제(Click!)</summary>
 ```java
 interface School {
