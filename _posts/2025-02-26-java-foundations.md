@@ -655,8 +655,10 @@ Person p1 = new Student();
 // Student s1 = new Person();
 ```
 <br><br>
+
 ### instanceof
 - 실제 참조하고 있는 인스턴스의 타입 확인
+
 <br>
 ```java
 class Person{}
