@@ -1805,4 +1805,289 @@ public class Practice {
 <br><br>
 
 ## 📝 람다 표현식(Lambda Expression)
+- 메소드 대신 하나의 식으로 표현
+- 익명 함수 (Anonymous function)
+
+```java
+반환타입 메소드이름 (매개변수, ...){
+    실행문
+}
+
+public int sum (int x, int y){
+    return x + y;
+}
+
+(매개변수, ...) -> {실행문 ...}
+(int x, int y) -> {return x + y;}
+```
+
+### 람다식 장점
+- 일반적으로 코드가 간결해짐
+- 코드 가독성이 높아짐
+- 생산성이 높아짐
+
+### 람다식 단점
+- 재사용이 불가능(익명)
+- 디버깅 어려움
+- 재귀함수로는 맞지 않음
+
+<details markdown="1">
+<summary>📘 Java Lambda 예제(Click!)</summary>
+```java
+// Java 람다식 - 람다식
+
+interface ComputeTool {
+    public abstract int compute(int x, int y);
+    public abstract int compute2(int x, int y);
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ComputeTool cTool1 = new ComputeTool() {
+            @Override
+            public int compute(int x, int y) {
+                return x + y;
+            }
+
+            public int compute2(int x, int y) {
+                return x - y;
+            }
+        };
+        System.out.println(cTool1.compute(1, 2));
+
+        // 람다식
+        ComputeTool cTool2 = (x, y) -> { return x + y; };
+        System.out.println(cTool2.compute(1, 2));
+    }
+}
+
+
+==========================================================
+
+// Practice
+// 아래 인터페이스를 이용하여 익명클래스로 구현한 내용을 람다식으로 구현해보세요.
+
+interface CompareTool {
+    public abstract int getMaxNum(int num1, int num2);
+}
+
+public class Practice {
+    public static void main(String[] args) {
+        // Test code
+        CompareTool cTool = new CompareTool() {
+            @Override
+            public int getMaxNum(int num1, int num2) {
+                return num1 > num2 ? num1 : num2;
+            }
+        };
+        System.out.println(cTool.getMaxNum(10, 11));
+
+        // 람다식으로 작성
+        CompareTool cTool2 = (x, y) -> { return x > y ? x : y; };
+        System.out.println(cTool2.getMaxNum(10, 11));
+    }
+}
+
+```
+</details>
+
+<br>
+
+#### 🎯 주요 내용
+> Lambda Expression 의 사용 방법
+{: .block-tip}
+
+<br><br>
+
+## 📝 스트림(Stream)
+- 배열, 컬렉션 등의 데이터를 하나씩 참조하여 처리 가능한 기능
+- for문의 사용을 줄여 코드를 간결하게 함
+- 스트림은 크게 3가지로 구성<br>
+1. Stream 생성<br>
+2. 중개 연산<br>
+3. 최종 연산
+
+```java
+데이터소스객체.Stream생성().중개연산().최종연산();
+```
+
+<br>
+### Stream 생성
+** 배열 스트림**
+```java
+String[] arr = new String[]{"a","b","c"};
+Stream stream = Arrays.stream(arr);
+```
+
+** 컬렉션 스트림**
+```java
+ArrayList list = new ArrayList(Arrays.asList(1,2,3));
+Stream stream = list.stream();
+```
+<br>
+
+### Stream 중개연산
+**Filtering**
+🔸 filter 내부 조건에 참인 요소들을 추출
+```java
+IntStream intStream = IntStream.range(1, 10).filter(n -> n % 2 == 0);
+```
+
+**Mapping**
+🔸map 안의 연산을 요소별로 수행
+```java
+IntStream intStream = IntStream.range(1, 10).map(n -> n + 1);
+```
+
+### 스트림 최종연산
+
+** Sum, Average**
+```java
+IntStream.range(1, 5).sum()
+IntStream.range(1, 5).average().getAsDouble()
+```
+
+** min, max**
+```java
+IntStream.range(1, 5).min().getAsInt();
+IntStream.range(1, 5).max().getAsInt();
+```
+<br>
+
+<details markdown="1">
+<summary>📘 Java Stream 예제(Click!)</summary>
+```java
+import java.util.stream.IntStream;
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. 스트림 생성
+        // 1-1. 배열 스트림
+        System.out.println("== 배열 스트림 ==");
+        String[] arr = new String[]{"a", "b", "c"};
+
+        System.out.println("== fori ==");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+
+        System.out.println("== forEach ==");
+        for (String item : arr) {
+            System.out.println(item);
+        }
+
+        System.out.println("== to Stream ==");
+        Stream<String> stream1 = Arrays.stream(arr);
+        stream1.forEach(System.out::println);
+
+        // 1-2. 컬렉션 스트림
+        System.out.println("== 컬렉션 스트림 ==");
+        ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3));
+        System.out.println(list1);
+
+        Stream<Integer> stream2 = list1.stream();
+        stream2.forEach(System.out::println);
+
+        stream2 = list1.stream();
+        stream2.forEach(num -> System.out.println("num = " + num));
+
+        // 1-3. 스트림 builder
+        System.out.println("== 스트림 builder ==");
+        Stream<Integer> streamBuilder = Stream.builder().add(1).add(2).add(3).build();
+        streamBuilder.forEach(System.out::println);
+
+        // 1-4. 스트림 generate
+        System.out.println("== 스트림 generate ==");
+        Stream<String> streamGenerate = Stream.generate(() -> "abc").limit(3);
+        streamGenerate.forEach(System.out::println);
+
+        // 1-5. 스트림 iterate
+        System.out.println("== 스트림 iterate ==");
+        Stream<Integer> streamIterate = Stream.iterate(10, n -> n + 2).limit(3);
+        streamIterate.forEach(System.out::println);
+
+        // 1-6. 기본 타입 스트림
+        System.out.println("== 기본타입 스트림 ==");
+        IntStream intStream = IntStream.range(1, 5);
+        intStream.forEach(System.out::println);
+
+        // 2. 스트림 중개 연산
+        // 2-1. Filtering
+        System.out.println("== Filtering ==");
+        IntStream intStream2 = IntStream.range(1, 10).filter(n -> n % 2 == 0);
+        intStream2.forEach(System.out::println);
+
+        // 2-2. Mapping
+        System.out.println("== Mapping ==");
+        IntStream intStream3 = IntStream.range(1, 10).map(n -> n + 1);
+        intStream3.forEach(n -> System.out.print(n + " "));
+        System.out.println();
+
+        // 2-3. Sorting
+        System.out.println("== Sorting ==");
+        IntStream intStream4 = IntStream.builder().add(5).add(1).add(3).add(4).add(2).build();
+        IntStream intStreamSort = intStream4.sorted();
+        intStreamSort.forEach(System.out::println);
+
+        // 3. 최종 연산
+        // 3-1. Sum, Average
+        System.out.println("== sum, average ==");
+        int sum = IntStream.range(1, 5).sum();
+        System.out.println("sum = " + sum);
+        double average = IntStream.range(1, 5).average().getAsDouble();
+        System.out.println("average = " + average);
+
+        // 3-2. Min, Max
+        System.out.println("== min, max ==");
+        int min = IntStream.range(1, 5).min().getAsInt();
+        System.out.println("min = " + min);
+        int max = IntStream.range(1, 5).max().getAsInt();
+        System.out.println("max = " + max);
+
+        // 3-3. reduce
+        System.out.println("== reduce ==");
+        Stream<Integer> stream3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5)).stream();
+        System.out.println(stream3.reduce((x, y) -> x + y).get());
+
+        // 3-4. forEach
+        System.out.println("== forEach ==");
+        IntStream.range(1, 10).filter(n -> n == 5).forEach(System.out::println);
+    }
+}
+
+============================================================================================
+
+import java.util.stream.IntStream;
+
+public class Practice {
+    public static void main(String[] args) {
+        // 예제: 1~10 숫자 중 짝수들의 합
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int sum = 0;
+
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                sum += num;
+            }
+        }
+        System.out.println("sum = " + sum);
+
+        // 스트림으로 구현
+        int sum2 = IntStream.range(1, 11).filter(x -> x % 2 == 0).sum();
+        System.out.println("sum2 = " + sum2);
+    }
+}
+
+
+```
+</details>
+
+#### 주요 내용
+> 1. Stream의기본 사용 방식 <br>
+> 2. Array, Collection, Builder, Generate, Iterate 사용 방식 <br>
+> 3. Filtering, Mapping, Sorting 방식<br>
+> 4. 연산 (Sum, Average, Min, Max)<br>
+> 5. reduce, forEach를 이용한 방식
+> 6. Method Reference
+{: .block-tip}
 
