@@ -97,6 +97,7 @@ public class Main {
 - 실체와 그것을 정의하는 설계도<br>
 - 클래스로부터 객체를 선언 (Instance)<br>
 <br>
+
 ### 클래스의 기본 구조
   
 ```java
@@ -452,6 +453,7 @@ public class Practice {
 
 > #### 🎯 주요 내용
 > Overloading, Access Modifier, Static 의 개념과 사용방식
+{: .block-tip}
 
 <br><br>
 
@@ -640,6 +642,7 @@ public class Practice2 {
 
 > #### 주요 정리
 > Inheritance의 개념과 사용 및 제한사항 정리 
+{: .block-tip}
 
 <br><br>
 
@@ -821,6 +824,7 @@ public class Practice {
 <br><br>
 > ### 주요 사항
 > Polymorphism에 대한 개념과 사용방식
+{: .block-tip}
 
 <br><br>
 
@@ -985,6 +989,7 @@ public class Practice {
 > #### 🎯 주요 내용
 > 1. Abstract Class, Method의 사용 및 개념, Inheritance의 사용
 > 2. Anonymous class 
+{: .block-tip}
 
 <br><br>
 
@@ -1164,6 +1169,7 @@ class OrkUser1 extends GreenOrc implements UserSystem {
 
 #### 🎯 주요 내용
 > interface의 사용
+{: .block-tip}
 
 <br><br>
 
@@ -1366,7 +1372,7 @@ public class Main {
 > 1. Stream 방식<br>
 > 2. BufferedReader 방식 <br>
 > 3. Scanner 방식 <br>
-
+{: .block-tip}
 <br>
 
 ## 📝 File
@@ -1477,7 +1483,7 @@ public class Practice {
 #### 🎯 주요 내용
 > 1. FileWriter, PrintWriter룰 이용한 파일 쓰기<br>
 > 2. BufferedReader, FileReader를 이용한 입력<br>
-
+{: .block-tip}
 <br><br>
 
 ## 📝 예외 (Exception)
@@ -1610,6 +1616,190 @@ public class Main {
 #### 🎯 주요 내용
 > 1. RuntimeException, IOException, ArrayIndexOfBoundsException <br>
 > 2. try-catch-finally 구조 <br>
+{: .block-tip}
+<br><br>
+
+## 📝 컬렉션 프레임워크(Collection Framwork)
+> ⚡ 여러 데이터를 편리하게 관리 할 수 있게 만들어 놓은 것<br>
+> - 자료 구조 및 알고리즘을 구조화<br>
+> ⚡ 대표 인터페이스<br>
+> - 1. List 인터페이스<br>
+> - 2. Set 인터페이스<br>
+> - 3. Map 인터페이스<br>
+
+<br>
+
+### List 인터페이스
+- 순서가 있는 데이터의 집합
+- 데이터 중복 허용
+- 대표 구현 클래스<br>
+1. ArrayList <br>
+2. LinkedList <br>
+3. Vector <br>
+```java
+ArrayList list1 = new ArrayList();
+LinkedList list2 = new LinkedList();
+Vector v = new Vector();
+```
+
+<br>
+
+### Set 인터페이스
+- 순서가 없는 데이터의 집합
+- 데이터의중복 허용 하지 않음
+- 대표 구현 클래스<br>
+1. HashSet <br>
+2. TreeSet <br>
+```java
+HashSet set1 = new HashSet();
+TreeSet set2 = new TreeSet();
+```
+<br>
+
+### Map 인터페이스
+- 키와 값의 쌍으로 이루어진 데이터의 집합
+- 순서를 유지 하지 않음
+- 대표 구현 클래스<br>
+1. HashMap<br>
+2. TreeMap<br>
+```java
+HashMap map1 = new HashMap();
+TreeMap map2 = new TreeMap();
+```
+<br><br>
+
+<details markdown="1">
+<summary>📘 Java Collection 예제(Click!)</summary>
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // 1. List
+        // 1-1. ArrayList
+        System.out.println("== ArrayList ==");
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        System.out.println("list1 = " + list1);
+        list1.remove(Integer.valueOf(2));
+        System.out.println("list1 = " + list1);
+        list1.add(0, 10);
+        System.out.println("list1 = " + list1);
+        System.out.println("list1.size() = " + list1.size());
+        System.out.println("list1.contains(1) = " + list1.contains(1));
+        System.out.println("list1.indexOf(10) = " + list1.indexOf(10));
+
+        // 1-2. LinkedList
+        System.out.println("== LinkedList ==");
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+        System.out.println("list2 = " + list2);
+        list2.addFirst(10);
+        list2.addLast(20);
+        System.out.println("list2 = " + list2);
+        list2.remove(Integer.valueOf(1));
+        System.out.println("list2 = " + list2);
+        list2.removeFirst();
+        list2.removeLast();
+        System.out.println("list2 = " + list2);
+        System.out.println(list2.size());
+
+        // 2. Set
+        // 2-1. HashSet
+        System.out.println("== HashSet ==");
+        HashSet<Integer> set1 = new HashSet<>();
+        set1.add(1);
+        set1.add(2);
+        set1.add(3);
+        System.out.println("set1 = " + set1);
+        set1.remove(1);
+        System.out.println("set1 = " + set1);
+        set1.add(2);
+        set1.add(3);
+        System.out.println("set1 = " + set1);
+        System.out.println(set1.contains(2));
+
+        // 2-2. TreeSet
+        System.out.println("== TreeSet ==");
+        TreeSet<Integer> set2 = new TreeSet<>();
+        set2.add(1);
+        set2.add(2);
+        set2.add(3);
+        System.out.println("set2 = " + set2);
+        set2.remove(2);
+        System.out.println("set2 = " + set2);
+        set2.clear();
+        System.out.println("set2 = " + set2);
+        set2.add(10);
+        set2.add(15);
+        set2.add(5);
+        System.out.println("set2 = " + set2);
+        System.out.println(set2.first());
+        System.out.println(set2.last());
+        System.out.println(set2.lower(10));
+        System.out.println(set2.higher(10));
+
+        // 3. Map
+        // 3-1. HashMap
+        System.out.println("== HashMap ==");
+        HashMap<Integer, String> map1 = new HashMap<>();
+        map1.put(1, "kiwi");
+        map1.put(2, "apple");
+        map1.put(3, "mango");
+        System.out.println("map1 = " + map1);
+        map1.remove(2);
+        System.out.println("map1 = " + map1);
+        System.out.println("map1.get(1) = " + map1.get(1));
+
+        // 3-2. TreeMap
+        System.out.println("== TreeMap ==");
+        TreeMap<Integer, String> map2 = new TreeMap<>();
+        map2.put(100, "kiwi");
+        map2.put(5, "apple");
+        map2.put(15, "mango");
+        System.out.println("map2 = " + map2);
+        System.out.println(map2.firstEntry());
+        System.out.println(map2.firstKey());
+        System.out.println(map2.lastKey());
+        System.out.println(map2.lowerEntry(10));
+        System.out.println(map2.higherEntry(10));
+    }
+}
+
+==========================================================================
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+
+public class Practice {
+    public static void main(String[] args) {
+        HashSet set = new HashSet();
+        while (set.size() < 6) {
+            int num = (int) (Math.random() * 45) + 1;
+            set.add(num);
+        }
+        LinkedList list = new LinkedList(set);
+        Collections.sort(list);
+        System.out.println("로또 번호: " + list);
+    }
+}
+
+
+```
+</details>
+<br><br>
+
+#### 🎯 주요 내용
+> 1. ArrayList, LinkedList, Set(HashSet, TreeSet), Map(HashMap, TreeMap) <br>
+> 2. Collections.sort<br>
 
 <br><br>
+
+## 📝 람다 표현식(Lambda Expression)
 
