@@ -1519,7 +1519,8 @@ try{
 <br>
 ### throw, throws
 - throw : 예외를 발생시킴
-- throws : 예외를 전가시킴<br>
+- throws : 예외를 전가시킴
+
 ```java
 ...함수이름(){
     throw new Exception();
@@ -1798,7 +1799,7 @@ public class Practice {
 
 #### 🎯 주요 내용
 > 1. ArrayList, LinkedList, Set(HashSet, TreeSet), Map(HashMap, TreeMap) <br>
-> 2. Collections.sort<br>
+> 2. Collections.sort
 {: .block-tip}
 <br><br>
 
