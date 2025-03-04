@@ -987,7 +987,7 @@ public class Practice {
 
 <br><br>
 
-### Interface
+## Interface
 - 다중 상속처럼 사용할 수 있는 기능
 - 추상 메소드와 상수만으로 이루어짐
 
@@ -1166,5 +1166,5 @@ class OrkUser1 extends GreenOrc implements UserSystem {
 
 <br><br>
 
-### 내부 클래스(Inner Class)
+## 내부 클래스(Inner Class)
 
