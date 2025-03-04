@@ -1517,7 +1517,7 @@ try{
     항상 실행되는 부분;
 }
 ```
-<br>
+
 ### throw, throws
 - throw : 예외를 발생시킴
 - throws : 예외를 전가시킴
