@@ -97,7 +97,7 @@ public class Main {
 - 실체와 그것을 정의하는 설계도<br>
 - 클래스로부터 객체를 선언 (Instance)<br>
 <br>
-### **클래스의 기본 구조**
+### 클래스의 기본 구조
   
 ```java
 public class 클래스명{
@@ -985,6 +985,181 @@ public class Practice {
 
 <br><br>
 
+### Interface
+- 다중 상속처럼 사용할 수 있는 기능
+- 추상 메소드와 상수만으로 이루어짐
+
+```java
+접근제어자 interface 인터페이스이름{
+    public static final 타입 상수이름=값;
+    public abstract 반환타입 메소드이름(매개변수);
+    ...
+}
+
+class 클래스이름 implements 인터페이스이름{
+    ...
+}
+```
+
+- 상속과 동시 사용
+
+```java
+접근제어자 interface 인터페이스이름{
+...
+}
+
+접근제어자 class 클래스이름{
+...
+}
+
+class 클래스이름 extends 클래스이름 implements 인터페이스이름{
+    ...
+}
+```
+<details>
+<summary>📘 Java Interface 예제(Click!)</summary>
+```java
+interface School {
+    public static final int MAX_CLASS = 20;
+    public static final int MAX_PERSON_PER_CLASS = 40;
+    public abstract void printSchool();
+}
+
+class Student implements School {
+    public void printSchool() {
+        System.out.println("00 University");
+    }
+}
+
+class Person {
+    public String name;
+
+    public void printName() {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Student2 extends Person implements School {
+    Student2(String name) {
+        super.name = name;
+    }
+
+    public void printSchool() {
+        System.out.println("11 University");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // 1. 인터페이스 기본 사용
+        System.out.println("== 기본 인터페이스 ==");
+        Student s1 = new Student();
+        s1.printSchool();
+        System.out.println(s1.MAX_CLASS);
+        System.out.println(s1.MAX_PERSON_PER_CLASS);
+
+        // 2. 다중 상속처럼 사용하기
+        System.out.println("== Like 다중 상속 ==");
+        Student2 s2 = new Student2("A");
+        s2.printSchool();
+        s2.printName();
+    }
+}
+
+===============================================================
+
+// 추상 클래스 GreenOrc
+abstract class GreenOrc {
+    public final String SKIN_COLOR = "녹색";
+    public int health;
+    public int attackDamage;
+    public int defense;
+
+    public abstract void setHealth();
+    public abstract void setDamage();
+    public abstract void setDefense();
+}
+
+// NPCSystem 인터페이스
+interface NPCSystem {
+    public abstract void conversationSystem();
+    public abstract void questionSystem();
+}
+
+// UserSystem 인터페이스
+interface UserSystem {
+    public abstract void partySystem();
+    public abstract void tradeSystem();
+}
+
+// OrkNPC1 클래스 - NPCSystem 구현
+class OrkNPC1 extends GreenOrc implements NPCSystem {
+    @Override
+    public void setHealth() {
+        this.health = 100;
+    }
+
+    @Override
+    public void setDamage() {
+        this.attackDamage = 10;
+    }
+
+    @Override
+    public void setDefense() {
+        this.defense = 5;
+    }
+
+    @Override
+    public void conversationSystem() {
+        System.out.println("안녕");
+        System.out.println("요즘 새로운 소식 없나요?");
+    }
+
+    @Override
+    public void questionSystem() {
+        System.out.println("새로운 퀘스트");
+        System.out.println("퀘스트 완료");
+    }
+}
+
+// OrkUser1 클래스 - UserSystem 구현
+class OrkUser1 extends GreenOrc implements UserSystem {
+    @Override
+    public void setHealth() {
+        this.health = 200;
+    }
+
+    @Override
+    public void setDamage() {
+        this.attackDamage = 20;
+    }
+
+    @Override
+    public void setDefense() {
+        this.defense = 10;
+    }
+
+    @Override
+    public void partySystem() {
+        System.out.println("파티 초대");
+        System.out.println("파티 수락");
+    }
+
+    @Override
+    public void tradeSystem() {
+        System.out.println("거래 신청");
+        System.out.println("거래 완료");
+    }
+}
 
 
+```
+</details>
 
+<br>
+
+#### 주요 내용
+> interface의 사용
+
+<br><br>
