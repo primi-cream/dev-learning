@@ -1189,6 +1189,7 @@ class OrkUser1 extends GreenOrc implements UserSystem {
 <br><br>
 <details markdown="1">
 <summary>📘 Java Inner Class 예제(Click!)</summary>
+```java
 // Java 프로그래밍 - 내부 클래스
 
 // 내부 클래스 구조
@@ -1244,7 +1245,7 @@ public class Main {
         };
     }
 }
-
+```
 </details>
 
 <br><br>
