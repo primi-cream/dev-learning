@@ -9,7 +9,7 @@ mermaid: true
 
 # Java Foundations
 
-## 다차원 배열
+## 📝 다차원 배열
 - 일차원 배열
 <pre><code>
 int[] myArray1 = {1, 2, 3, 4, 5};
@@ -88,12 +88,12 @@ public class Main {
 
 <br><br>
 
-> #### 주요 내용
+> #### 🎯 주요 내용
 > 이차원 배열의 사용방식 <br>
 {: .block-tip }
 <br>
 
-## 클래스(Class) & 객체(Object)
+## 📝 클래스(Class) & 객체(Object)
 - 실체와 그것을 정의하는 설계도<br>
 - 클래스로부터 객체를 선언 (Instance)<br>
 <br>
@@ -258,7 +258,7 @@ public class Practice {
 <br><br>
 
 
-> #### 주요 내용
+> #### 🎯 주요 내용
 > 1. Class의 형태와 사용방식 <br>
 > 2. Method의 사용방식 <br>
 {: .block-tip }
@@ -450,12 +450,12 @@ public class Practice {
 
 <br>
 
-> #### 주요 내용
+> #### 🎯 주요 내용
 > Overloading, Access Modifier, Static 의 개념과 사용방식
 
 <br><br>
 
-## 상속(Inheritance)
+## 📝 상속(Inheritance)
 > 기존 클래스에 기능 추가 및 재정의하여 새로운 클래스를 정의<br>
 > - 부모 클래스 : 상속대상이 되는 기존 클래스→ 상위 클래스, 기초클래스
 > - 자식 클래스 : 기존 클래스를 상속하는 클래스→ 하위 클래스, 파생 클래스
@@ -643,7 +643,7 @@ public class Practice2 {
 
 <br><br>
 
-## 다형성(Polymorphism)
+## 📝 다형성(Polymorphism)
 > 한 객체가 여러 가지 타입을 가질 수 있는 것<br>
 > 부모클래스 타입의 참조 변수로 자식클래스 인스턴스 참조<br>
 
@@ -824,7 +824,7 @@ public class Practice {
 
 <br><br>
 
-## 추상클래스 (Abstract Class)
+## 📝 추상클래스 (Abstract Class)
 > 하나 이상의 **추상 메소드**를 포함하는 클래스 <br>
 > 반드시 구형해야 하는 부분에 대해 명시적으로 표현 <br>
 > 추상 클래스 자체는 객체 생성 불가
@@ -982,13 +982,13 @@ public class Practice {
 
 <br><br>
 
-> #### 주요 내용
+> #### 🎯 주요 내용
 > 1. Abstract Class, Method의 사용 및 개념, Inheritance의 사용
 > 2. Anonymous class 
 
 <br><br>
 
-## Interface
+## 📝 Interface
 - 다중 상속처럼 사용할 수 있는 기능
 - 추상 메소드와 상수만으로 이루어짐
 
@@ -1162,12 +1162,12 @@ class OrkUser1 extends GreenOrc implements UserSystem {
 
 <br>
 
-#### 주요 내용
+#### 🎯 주요 내용
 > interface의 사용
 
 <br><br>
 
-## 내부 클래스(Inner Class)
+## 📝 내부 클래스(Inner Class)
 - 내부 클래스에서 외부클래스 멤버에 접근가능
 - 외부에서는 내부 클래스에 접근 불가
 
@@ -1251,7 +1251,7 @@ public class Main {
 
 <br><br>
 
-## Console
+## 📝 Console
 
 ### Input
 - 입출력 방식 중 콘솔 입력 방법
@@ -1362,14 +1362,14 @@ public class Main {
 </details>
 <br><br>
 
-#### 주요 내용
+#### 🎯 주요 내용
 > 1. Stream 방식<br>
 > 2. BufferedReader 방식 <br>
 > 3. Scanner 방식 <br>
 
 <br>
 
-## File
+## 📝 File
 
 ### File Input
 - 입출력 방식 중 파일로부터 입력 받는 방법
@@ -1474,10 +1474,142 @@ public class Practice {
 ```
 </details>
 
-#### 주요 내용
+#### 🎯 주요 내용
 > 1. FileWriter, PrintWriter룰 이용한 파일 쓰기<br>
 > 2. BufferedReader, FileReader를 이용한 입력<br>
 
 <br><br>
 
+## 📝 예외 (Exception)
+- 정상적이지 않은 Case<br>
+1. 0으로 나누기<br>
+2. 배열의 인텍스 초과 <br>
+3. 없는 파일 열기<br>
+...<br>
+<br>
+### 예외 처리 (Exception Handling)
+- 정상적이지 않은 Case에 대한 적절한 처리 방법
+```java
+try{
+    ...
+} catch (예외 case 1){
+    ...
+} catch (예외 case 2){
+    ...
+}
+```
+<br><br>
+### finally
+- 예외 발생 여부와 관계 없이 항상 실행되는 부분
+```java
+try{
+    예외가 발생할 수도 있는 부분;
+}catch(예외 case 1){
+    예외 case1이 발생해야 실행되는 부분;
+}finally{
+    항상 실행되는 부분;
+}
+```
+<br>
+### throw, throws
+- throw : 예외를 발생시킴
+- throws : 예외를 전가시킴
+```java
+...함수이름(){
+    throw new Exception();
+}
+
+... 함수이름() throws Exception{
+    ...
+}
+```
+<br><br>
+
+<details>
+<summary>📘 Java Exception 예제(Click!)</summary>
+```java
+class NotTenException extends RuntimeException {}
+
+public class Main {
+
+    public static boolean checkTen(int ten) {
+        if (ten != 10) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean checkTenWithException(int ten) {
+        try {
+            if (ten != 10) {
+                throw new NotTenException();
+            }
+        } catch (NotTenException e) {
+            System.out.println("e = " + e);
+            return false;
+        }
+        return true;
+    }
+    public static boolean checkTenWithThrows(int ten) throws NotTenException {
+        if (ten != 10) {
+            throw new NotTenException();
+        }
+        return true;
+    }
+
+    public static void main(String[] args) throws IOException {
+        System.out.println("== 0으로 나누기 ==");
+        int a = 5 / 0;
+
+        try {
+            int a = 5 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("0으로 나누기 예외 발생");
+            System.out.println("e = " + e);
+        } finally {
+            System.out.println("1-1 연습 종료");
+        }
+        System.out.println("== 배열 인덱스 초과 ==");
+        int[] b = new int[4];
+        b[4] = 1;
+
+        try {
+            b[4] = 1;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("e = " + e);
+        }
+
+        System.out.println("== 없는 파일 열기 ==");
+        BufferedReader br = new BufferedReader(new FileReader("abc.txt"));
+
+        System.out.println("== checkTen ==");
+        boolean checkResult = Main.checkTen(10);
+        System.out.println("checkResult = " + checkResult);
+
+        System.out.println("== checkTenWithException ==");
+        checkResult = Main.checkTenWithException(9);
+        System.out.println("checkResult = " + checkResult);
+
+        System.out.println("== checkTenWithThrows ==");
+
+        try {
+            checkResult = checkTenWithThrows(5);
+        } catch (NotTenException e) {
+            System.out.println("e = " + e);
+        }
+
+        System.out.println("checkResult = " + checkResult);
+    }
+}
+
+
+```
+</details>
+<br><br>
+
+#### 🎯 주요 내용
+> 1. RuntimeException, IOException, ArrayIndexOfBoundsException <br>
+> 2. try-catch-finally 구조 <br>
+
+<br><br>
 
