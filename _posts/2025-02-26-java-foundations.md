@@ -1165,3 +1165,6 @@ class OrkUser1 extends GreenOrc implements UserSystem {
 > interface의 사용
 
 <br><br>
+
+### 내부 클래스(Inner Class)
+
