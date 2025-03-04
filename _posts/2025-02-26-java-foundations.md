@@ -1913,13 +1913,14 @@ public class Practice {
 
 <br>
 ### Stream 생성
-** 배열 스트림**
+**배열 스트림**
+
 ```java
 String[] arr = new String[]{"a","b","c"};
 Stream stream = Arrays.stream(arr);
 ```
 
-** 컬렉션 스트림**
+**컬렉션 스트림**
 ```java
 ArrayList list = new ArrayList(Arrays.asList(1,2,3));
 Stream stream = list.stream();
@@ -1927,13 +1928,13 @@ Stream stream = list.stream();
 <br>
 
 ### Stream 중개연산
-**Filtering**
+**Filtering**<br>
 🔸 filter 내부 조건에 참인 요소들을 추출
 ```java
 IntStream intStream = IntStream.range(1, 10).filter(n -> n % 2 == 0);
 ```
 
-**Mapping**
+**Mapping**<br>
 🔸map 안의 연산을 요소별로 수행
 ```java
 IntStream intStream = IntStream.range(1, 10).map(n -> n + 1);
@@ -1941,13 +1942,13 @@ IntStream intStream = IntStream.range(1, 10).map(n -> n + 1);
 
 ### 스트림 최종연산
 
-** Sum, Average**
+**Sum, Average**
 ```java
 IntStream.range(1, 5).sum()
 IntStream.range(1, 5).average().getAsDouble()
 ```
 
-** min, max**
+**min, max**
 ```java
 IntStream.range(1, 5).min().getAsInt();
 IntStream.range(1, 5).max().getAsInt();
@@ -2082,12 +2083,16 @@ public class Practice {
 ```
 </details>
 
-#### 주요 내용
+#### 🎯 주요 내용
 > 1. Stream의기본 사용 방식 <br>
 > 2. Array, Collection, Builder, Generate, Iterate 사용 방식 <br>
 > 3. Filtering, Mapping, Sorting 방식<br>
 > 4. 연산 (Sum, Average, Min, Max)<br>
-> 5. reduce, forEach를 이용한 방식
+> 5. reduce, forEach를 이용한 방식<br>
 > 6. Method Reference
 {: .block-tip}
+
+<br><br>
+
+
 
