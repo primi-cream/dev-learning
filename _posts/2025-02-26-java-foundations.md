@@ -1167,4 +1167,85 @@ class OrkUser1 extends GreenOrc implements UserSystem {
 <br><br>
 
 ## 내부 클래스(Inner Class)
+- 내부 클래스에서 외부클래스 멤버에 접근가능
+- 외부에서는 내부 클래스에 접근 불가
+
+### 내부 클래스 종류
+- 인스턴스 클래스 (Instance Class)
+- 정적 클래스 (Static Class)
+- 지역 클래스 (Local Class)
+- 익명 클래스 (Anonymous Class)
+
+#### Anonymous Class
+- 이름을 가지지 않는 클래스
+- 선언과 동시에 객체 생성
+- 일회용 클래스
+```java
+클래스이름 참조변수이름 = new 클래스 이름(){
+    ...
+};
+```
+
+<br><br>
+<details markdown="1">
+<summary>📘 Java Inner Class 예제(Click!)</summary>
+// Java 프로그래밍 - 내부 클래스
+
+// 내부 클래스 구조
+class Outer {
+    public void print() {
+        System.out.println("Outer.print");
+    }
+
+    class Inner {
+        public void innerPrint() {
+            Outer.this.print();
+        }
+    }
+
+    static class InnerStaticClass {
+        void innerPrint() {
+            // 정적 내부 클래스에서는 Outer.this를 직접 사용할 수 없음
+            // Outer.this.print(); // 오류 발생
+        }
+    }
+}
+
+// 추상 클래스 Person
+abstract class Person {
+    public abstract void printInfo();
+}
+
+// Student 클래스 - Person 상속
+class Student extends Person {
+    public void printInfo() {
+        System.out.println("Student.printInfo");
+    }
+}
+
+// Main 클래스
+public class Main {
+    public static void main(String[] args) {
+        // 외부 클래스
+        Outer o1 = new Outer();
+
+        // 내부 클래스 - 인스턴스
+        Outer.Inner i1 = new Outer().new Inner();
+
+        // 내부 클래스 - 정적
+        Outer.InnerStaticClass is1 = new Outer.InnerStaticClass();
+
+        // 익명 클래스
+        Person p1 = new Person() {
+            @Override
+            public void printInfo() {
+                System.out.println("Main.printInfo");
+            }
+        };
+    }
+}
+
+</details>
+
+<br><br>
 
