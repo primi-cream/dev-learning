@@ -298,7 +298,8 @@ public class 클래스명{
 2. Static 변수나 메소드는 공유되는 특성을 가짐<br>
 - Static 클래스 변수 : 해당 클래스의 각 객체들이 값을 공유<br>
 - Static 클래스 메소드 : 객체를 생성하지 않아도 호출 가능
-<br><br>
+
+<br><br><br>
 
 
 <details markdown="1">
@@ -1249,4 +1250,234 @@ public class Main {
 </details>
 
 <br><br>
+
+## Console
+
+### Input
+- 입출력 방식 중 콘솔 입력 방법
+```java
+System.in.read()
+InputStreamReader reader = ...
+BuffredReader br = ...
+Scanner ...
+```
+<br>
+
+### Output
+- 입출력 방식 중 콘솔 출력 방법
+```java
+System.out.println(...);
+System.out.print(...);
+System.out.printf(...);
+```
+<br>
+
+<details>
+<summary>📘 Java Console 예제(Click!)</summary>
+```java
+public class Main {
+
+    public static void referInputStream() throws IOException {
+        System.out.println("== System.in ==");
+        System.out.print("입력: ");
+        int a = System.in.read() - '0';
+        System.out.println("a = " + a);
+        System.in.read(new byte[System.in.available()]);
+
+        // InputStreamReader
+        System.out.println("== InputStreamReader ==");
+        InputStreamReader reader = new InputStreamReader(System.in);
+        char[] c = new char[3];
+        System.out.print("입력: ");
+        reader.read(c);
+        System.out.println(c);
+
+        // BufferedReader
+        System.out.println("== BufferedReader ==");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("입력: ");
+        String s1 = br.readLine();
+        System.out.println("s1 = " + s1);
+    }
+
+    public static void main(String[] args) throws IOException {
+        // 1. 입력
+        // 1-1. 다른 입력 방식 참고
+        referInputStream();
+
+        // 1-2. Scanner
+        System.out.println("== Scanner ==");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("입력1: ");
+        System.out.println(sc.next());
+        sc.nextLine();
+
+        System.out.print("입력2: ");
+        System.out.println(sc.nextInt());
+        sc.nextLine();
+
+        System.out.print("입력3: ");
+        System.out.println(sc.nextLine());
+
+        // 참고) 정수, 문자열 변환
+        int num = Integer.parseInt("12345");
+        String str = Integer.toString(12345);
+
+        // 2. 출력
+        System.out.println("== 출력 ==");
+        System.out.println("Hello!");
+        System.out.println("World!");
+
+        System.out.print("Hello ");
+        System.out.print("World!");
+        System.out.println();
+
+        System.out.printf("Hello ");
+        System.out.printf("World!");
+        System.out.println();
+
+        String s = "자바";
+        int number = 3;
+
+        System.out.printf("%s는 언어 선호도 %d위 입니다.\n", s, number);
+
+        System.out.printf("%d\n", 10);
+        System.out.printf("%o\n", 10);
+        System.out.printf("%x\n", 10);
+
+        System.out.printf("%f\n", 5.2f);
+
+        System.out.printf("%c\n", 'A');
+        System.out.printf("%s\n", "안녕하세요");
+
+        System.out.printf("%-5d\n", 123);
+        System.out.printf("%d\n", 1234);
+        System.out.printf("%d\n", 12345);
+
+        System.out.printf("%.2f\n", 1.12645123f);
+    }
+}
+
+```
+</details>
+<br><br>
+
+#### 주요 내용
+> 1. Stream 방식<br>
+> 2. BufferedReader 방식 <br>
+> 3. Scanner 방식 <br>
+
+<br>
+
+## File
+
+### File Input
+- 입출력 방식 중 파일로부터 입력 받는 방법
+```java
+FileInputStream ...
+BufferedReader ...
+```
+
+### File Output
+```java
+FileOutputStream ...
+FileWriter ...
+PrintWriter ...
+```
+
+<details>
+<summary>📘 Java File 예제(Click!)</summary>
+```java
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        // 1. 파일 쓰기
+        FileWriter fw = new FileWriter("./memo.txt");
+        String memo = "헤드 라인\n";
+        fw.write(memo);
+        memo = "1월 1일 날씨 맑음\n";
+        fw.write(memo);
+        fw.close();
+
+        PrintWriter pw = new PrintWriter("./memo.txt");
+        memo = "헤드 라인";
+        pw.println(memo);
+        memo = "1월 1일 날씨 맑음";
+        pw.println(memo);
+        pw.close();
+
+        // 파일 이어 쓰기
+        FileWriter fw2 = new FileWriter("./memo.txt", true);
+        memo = "1월 2일 날씨 완전 맑음\n";
+        fw2.write(memo);
+        fw2.close();
+
+        PrintWriter pw2 = new PrintWriter(new FileWriter("./memo.txt", true));
+        memo = "1월 3일 날씨 또 맑음!!";
+        pw2.println(memo);
+        pw2.close();
+
+        // 2. 파일 입력
+        BufferedReader br = new BufferedReader(new FileReader("./memo.txt"));
+        while (true) {
+            String line = br.readLine();
+            if (line == null) {
+                break;
+            }
+            System.out.println(line);
+        }
+        br.close();
+    }
+}
+
+================================================================================
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Practice {
+    public static void main(String[] args) throws IOException {
+        String inputFile = "./JamesArthurGosling.txt";
+        String outputFile = "./JamesArthurGosling_edit.txt";
+
+        // 찾을 단어 / 변경 단어 입력 받기
+        System.out.print("찾을 단어: ");
+        Scanner sc = new Scanner(System.in);
+        String find = sc.nextLine();
+        System.out.print("변경 단어: ");
+        String to = sc.nextLine();
+
+        // 파일 읽기, 변경 및 저장
+        BufferedReader br = new BufferedReader(new FileReader(inputFile));
+        FileWriter fw = new FileWriter(outputFile);
+
+        while (true) {
+            String line = br.readLine();
+            if (line == null) {
+                break;
+            }
+            String newLine = line.replace(find, to);
+            fw.write(newLine + '\n');
+        }
+
+        br.close();
+        fw.close();
+    }
+}
+
+
+```
+</details>
+
+#### 주요 내용
+> 1. FileWriter, PrintWriter룰 이용한 파일 쓰기<br>
+> 2. BufferedReader, FileReader를 이용한 입력<br>
+
+<br><br>
+
 
